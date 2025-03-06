@@ -22,11 +22,13 @@ public class EmployeeService {
 
     // Get user by ID
     public Optional<EmployeeModel> getUserById(Long id) {
+
         return employeeRepository.findById(id);
     }
 
     // Create user
     public EmployeeModel createUser(EmployeeModel user) {
+
         return employeeRepository.save(user);
     }
 
@@ -39,7 +41,6 @@ public class EmployeeService {
         });
     }
 
-    // Delete user
     public boolean deleteUser(Long id) {
         if (employeeRepository.existsById(id)) {
             employeeRepository.deleteById(id);
